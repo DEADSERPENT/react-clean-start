@@ -13,7 +13,7 @@ const POSTCSS_CONFIG_CRA = `module.exports = {
 const INDEX_CSS = `@import "tailwindcss";
 `;
 
-function generateTailwind(projectPath, typescript, cra) {
+function generateTailwind(projectPath, cra) {
   if (cra) {
     // CRA uses PostCSS — write the postcss config
     writeFile(projectPath, "postcss.config.js", POSTCSS_CONFIG_CRA);

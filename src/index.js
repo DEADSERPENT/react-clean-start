@@ -65,7 +65,7 @@ async function run(projectName, options) {
     // CRA needs cleanup — Vite is already scaffolded clean
     if (useCRA) {
       spinner.start("Cleaning starter files...");
-      cleanCRA(projectPath, typescript);
+      cleanCRA(projectPath, typescript, tailwind);
       spinner.stop();
       success("Starter boilerplate removed");
     }

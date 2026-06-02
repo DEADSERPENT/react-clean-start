@@ -130,16 +130,6 @@ const APP_JSX = `function App() {
 export default App
 `;
 
-const APP_JSX_TAILWIND = `function App() {
-  return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-      <h1 className="text-3xl font-bold text-gray-800">App</h1>
-    </div>
-  )
-}
-
-export default App
-`;
 
 const TSCONFIG = JSON.stringify({
   compilerOptions: {
@@ -195,10 +185,10 @@ function createVite(projectName, typescript, tailwind) {
 
   fs.writeFileSync(path.join(projectPath, `src/main.${ext}`), mainContent);
 
-  // src/App — use tailwind-styled template when active
+  // src/App — minimal starter component
   fs.writeFileSync(
-    path.join(projectPath, `src/App.${ext}`),
-    tailwind ? APP_JSX_TAILWIND : APP_JSX
+  path.join(projectPath, `src/App.${ext}`),
+  APP_JSX
   );
 
   // tsconfig if needed
